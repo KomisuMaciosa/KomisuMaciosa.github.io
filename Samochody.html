@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pl">
+    <head>
+        <meta charset="UTF-8"/>
+        <title> Komis u Maciosa </title>
+        <meta name="description" content="Poszukujesz fajnych samochodów w każdym przedziale cenowym? Dobrze trafiłeś! 
+        W Komisie u Maciosa znajdziesz samochód idealny!"/>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="style.css">
+        <link rel="icon" href="favicon.ico">
+    </head>
+
+    <body>
+        <div id="wrapper">
+            <header>
+                <img src="nazwa1.jpg" alt="nazwa - header"/>
+            </header>
+
+            <nav>
+                <a class="menu" href="index.html">Główna</a><a class="menu" href="Statystyki.html">Statystyki</a><a class="menu active" href="Samochody.html">Samochody</a><a class="menu" href="Sprzedaj.html">Sprzedaj</a><a class="menu" href="Kup.html">Kup</a>
+            </nav>
+
+            <section>
+                <article>
+                    <h2>Oto nasze samochody!!!</h2>
+                    <p><img class="left3" src="wiecejFur.jpg" alt="Fury" /></p>
+                    <p>
+                        <script>
+                            
+    var Komis = 
+    {
+        liczbaAut: 0,
+        dane: [],
+        noweAuto: function(Marka, Model, Rok, Moc, Cena)
+            {
+                var Car = 
+                    {
+                        Marka: Marka,
+                        Model: Model,
+                        Rok: Rok,
+                        Moc: Moc,
+                        Cena: Cena,
+                    };
+                
+                this.liczbaAut++;
+                this.dane.push(Car);
+
+                return Car;
+            },
+
+            
+        wyswietl: function()
+        {
+            var final = "";
+            for(let i = 0; i < this.dane.length; i++)
+            {
+                let element = this.dane[i];
+                
+                document.write(element.Marka, "__", element.Model, "__", element.Rok, " rok__", element.Moc, " km__", element.Cena, "zł ", "<br />");
+            }
+        },
+
+        usunAuto: function(i)
+            {
+                if (i >= this.dane.length) return;
+                this.dane.splice(i,1);
+            },
+
+        statystyki: function()
+            {
+              //console.log(`Ilość skupowanych aut: ${this.liczbaAut}`);
+                document.write("Ilość skupowanych aut: ",  this.liczbaAut, "<br />");
+
+                let cenaRazem = 0
+                for (let i = 0; i < this.dane.length; i++)
+                    {
+                        let element = this.dane[i];
+                        cenaRazem += element.Cena;
+                    }
+              //console.log(`Łączna cena samochodów w komisie to: ${cenaRazem}`);
+                document.write("Łączna cena samochodów w komisie to: ", cenaRazem, " zł");
+            }
+    };
+
+var auto0 = Komis.noweAuto("Toyota", "Supra mk4", 1990, 280, 200000);
+var auto1 = Komis.noweAuto("Nissan", "Skyline", 1995, 300, 180000);
+var auto2 = Komis.noweAuto("Honda", "Civic", 1992, 70, 990);
+var auto3 = Komis.noweAuto("Mazda", "rx8", 1998, 231, 25000);
+var auto4 = Komis.noweAuto("Toyota", "Prius", 2003, 86, 3780);
+var auto5 = Komis.noweAuto("Honda", "NSX", 1995, 1200, 300000 );
+var auto6 = Komis.noweAuto("Ford", "Mondeo", 2010, 160, 999999);
+
+Komis.wyswietl();
+
+    
+
+                        </script>
+                    </p>
+                    <p><br>Zobacz to!!! Kultowe modele z całego świata!!! Już dzisiaj mogą być TWOJE!!!</p>
+
+
+                </article>
+            </section>
+
+            <footer> Aby wykonać taką stronę obejrzałem ponad 12h poradników. I TO ZA DARMO!!!</footer>
+        </div>
+    </body>
+</html>
